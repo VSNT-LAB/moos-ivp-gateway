@@ -3,17 +3,17 @@
 // FILE: alpha.moos
 //-------------------------------------------------
 
-ServerHost   = 172.17.0.1 //localhost
+ServerHost   = 127.0.0.1 //localhost
 ServerPort   = 9000
 Community    = gateway
 MOOSTimeWarp = 1
 
 // Forest Lake
-//LatOrigin  = 43.825300 
+//LatOrigin  = 43.825300
 //LongOrigin = -70.330400
 
 // MIT Sailing Pavilion (use this one)
-LatOrigin  = 42.358456 
+LatOrigin  = 42.358456
 LongOrigin = -71.087589
 
 //------------------------------------------
@@ -35,11 +35,11 @@ ProcessConfig = iMOOSGateway
   CommsTick	= 4
 
   tcp_port = 9501
-	
-	// comma separated moos variables to send to client                                                 
+
+	// comma separated moos variables to send to client
   forward_to_client = DESIRED_HEADING, DESIRED_SPEED, DESIRED_RUDDER, DESIRED_THRUST, DEPLOY, IVPHELM_STATE, IVPHELM_ALLSTOP, IVPHELM_MODESET, DB_TIME
-  
-  // comma separated moos variables to block from client                                                
+
+  // comma separated moos variables to block from client
   block_from_client = DEPLOY
 }
 
