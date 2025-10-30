@@ -4,7 +4,7 @@
 //-------------------------------------------------
 
 ServerHost   = 127.0.0.1 //localhost
-ServerPort   = 9000
+ServerPort   = 9501
 Community    = gateway
 MOOSTimeWarp = 1
 
