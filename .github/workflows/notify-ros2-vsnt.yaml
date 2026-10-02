@@ -1,0 +1,21 @@
+name: Notify image repo
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: 1885860
+          private-key: ${{ secrets.AC_VSNT_KEY }}
+          owner: VSNT-LAB
+
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          repository: VSNT-LAB/ros2_vsnt
+          event-type: deps_changed
